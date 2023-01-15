@@ -1,6 +1,5 @@
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #E7F6FF;
@@ -12,6 +11,7 @@ body {
   list-style: none;
   outline: none;
   box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 .wrapper {
@@ -45,6 +45,17 @@ header {
   width: 220px;
   border-radius: 40px;
   margin-right: 30px;
+  transition: .2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 14px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(-5px);
+  }
+
+  .favorite {
+    position: absolute;
+    cursor: pointer;
+  }
 
   span {
     font-size: 12px;
@@ -65,6 +76,136 @@ header {
   border-radius: 8px;
   height: 32px;
   width: 32px;
+  cursor: pointer;
 }
 
+.search-block {
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  padding: 0 15px;
+  input {
+    border: 0;
+    padding: 13px;
+    font-size: 16px;
+    width: 200px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.drawer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 420px;
+  height: 100%;
+  right: 0;
+  background: #FFFFFF;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+
+  .items {
+    overflow: auto;
+    margin-bottom: 40px;
+  }
+}
+
+.items {
+  flex: 1;
+}
+h2 {
+  font-size: 24px;
+}
+
+.cartTotalBlock {
+  ul {
+    margin-bottom: 40px !important;
+    li {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+    div {
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed #dfdfdf;
+      position: relative;
+      top: -4px;
+      margin: 0 7px;
+    }
+  }
+
+
+  .greenButton {
+    width: 100%;
+    height: 55px;
+    background: #9DD558;
+    border-radius: 18px;
+    border: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+
+    &:hover {
+      background: lighten(#9DD558, 2%);
+    }
+    &:active {
+      background: darken(#9DD558, 10%);
+    }
+  }
+  .greenButton {
+    position: relative;
+    &:hover {
+      img {
+        transform: translateX(5px);
+      }
+    }
+    img {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      transition: transform .2s ease-in-out;
+    }
+  }
+}
+
+.cartItem {
+    border: 1px solid #F3F3F3;
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+
+  .cartItemImg {
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-position: 0 -2px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+  }
+  p {
+    font-size: 16px;
+  }
+  b {
+    font-size: 14px;
+  }
+  .removeBtn {
+    opacity: .5;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
 
