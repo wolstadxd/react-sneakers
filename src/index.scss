@@ -5,6 +5,11 @@ body {
   background-color: #E7F6FF;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -43,6 +48,15 @@ header {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
+
+  .clear {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    width: 18px;
+    height: 18px;
+  }
   input {
     border: 0;
     padding: 13px;
@@ -83,6 +97,54 @@ h2 {
   font-size: 24px;
 }
 
+.greenButton {
+  width: 100%;
+  height: 55px;
+  background: #9DD558;
+  border-radius: 18px;
+  border: 0;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+
+  &:hover {
+    background: lighten(#9DD558, 2%);
+  }
+  &:active {
+    background: darken(#9DD558, 10%);
+  }
+}
+
+.cartEmpty {
+  text-align: center;
+
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+
+  .greenButton {
+    width: 245px;
+    margin-top: 20px;
+
+    &:hover {
+      img {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    img {
+      position: relative;
+      top: 1px;
+      transform: rotate(180deg);
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
+  }
+}
+
 .cartTotalBlock {
   ul {
     margin-bottom: 40px !important;
@@ -101,26 +163,6 @@ h2 {
     }
   }
 
-
-  .greenButton {
-    width: 100%;
-    height: 55px;
-    background: #9DD558;
-    border-radius: 18px;
-    border: 0;
-    color: white;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background .2s ease-in-out;
-
-    &:hover {
-      background: lighten(#9DD558, 2%);
-    }
-    &:active {
-      background: darken(#9DD558, 10%);
-    }
-  }
   .greenButton {
     position: relative;
     &:hover {
