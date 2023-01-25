@@ -109,6 +109,11 @@ h2 {
   cursor: pointer;
   transition: background .2s ease-in-out;
 
+  &:disabled {
+    background: #bebebe !important;
+    cursor: default !important;
+  }
+
   &:hover {
     background: lighten(#9DD558, 2%);
   }
@@ -165,6 +170,11 @@ h2 {
 
   .greenButton {
     position: relative;
+
+    &:disabled {
+      animation: button-loading .6s ease-in-out infinite;
+    }
+
     &:hover {
       img {
         transform: translateX(5px);
@@ -206,6 +216,18 @@ h2 {
     &:hover {
       opacity: 1;
     }
+  }
+}
+
+@keyframes button-loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
